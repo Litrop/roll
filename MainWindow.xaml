@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="MainWindow" Height="200" Width="200">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Center" Text="Range: 1 ~ " />
+            <TextBox Width="20" Text="{ Binding EndNumber, RelativeSource={ RelativeSource Mode=FindAncestor, AncestorType=Window } }" />
+        </StackPanel>
+        <Button HorizontalAlignment="Center" Margin="0,20,0,20" Click="ToggleRoll" Content="{ Binding RollButtonText, RelativeSource={ RelativeSource Mode=FindAncestor, AncestorType=Window } }" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" Text="Result: " />
+            <TextBlock HorizontalAlignment="Center" Text="{ Binding RandomNumber, RelativeSource={ RelativeSource Mode=FindAncestor, AncestorType=Window } }" />
+        </StackPanel>
+    </StackPanel>
 </Window>
